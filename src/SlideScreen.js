@@ -24,7 +24,7 @@ function SlideScreen()
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
       for (let value of boxesList) {
-        console.log(value);
+        // console.log(value);
         // Draw the box on the canvas
         ctx.strokeStyle = 'green';
         ctx.lineWidth = 0.5;
@@ -35,7 +35,7 @@ function SlideScreen()
         );
       }
     }
-    console.log("Path " , slideInput["slide_image_path"])
+    // console.log("Path " , slideInput["slide_image_path"])
     img.src = slideInput["slide_image_path"];
 
   }, [slideInput, boxesList]);

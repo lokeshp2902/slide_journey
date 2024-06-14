@@ -1,8 +1,9 @@
-import { useSlideContext } from './SlideProvider';
+import PlaneScreen from './PlaneScreen';
 import PointFlowScreen from './PointFlowScreen';
+import SlideScreen from './SlideScreen'
 import WhiteScreen from './WhiteScreen';
 
-import SlideScreen from './SlideScreen'
+import { useSlideContext } from './SlideProvider';
 
 function CenterScreen(){
   const {currentState, pointMetadata} = useSlideContext();
@@ -17,10 +18,14 @@ function CenterScreen(){
         console.log(pointMetadata["module"]);
         return <PointFlowScreen />;
       }
-      else if("module" in pointMetadata && (pointMetadata["module"] === "white_capture"))
+      else if("module" in pointMetadata && (pointMetadata["module"] === "white_creation"))
       {
-        // console.log("1222");
+        console.log("1222");
         return <WhiteScreen />;
+      }
+      else if("module" in pointMetadata && (pointMetadata["module"] === "plane_creation"))
+      {
+        return <PlaneScreen />
       }
       else
       {

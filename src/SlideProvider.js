@@ -439,10 +439,18 @@ function SlideProvider(props){
 
   function nextButtonClick(){
     setCurrentState(prevState => prevState + 1);
+
+    // if(slideInput["pipeline"][currentState]["module"] === "reference_estimation")
+    // {
+    //     console.log("Reference Estimation");
+    //     setCurrentState(prevState => prevState + 1);
+    // }
+
     console.log("Next Button Clicked ", currentState);
     if(currentState >= 0 && currentState < slideInput["pipeline"].length)
     {
       console.log("inside next click ", slideInput["pipeline"][currentState]["module"]);
+
       if(slideInput["pipeline"][currentState]["module"] === "best_z_level_estimation" ||
         slideInput["pipeline"][currentState]["module"] === "focus_sampling")
       {
@@ -454,10 +462,14 @@ function SlideProvider(props){
         boxList.push(slideInput["pipeline"][currentState]);
         setBoxesList(boxList);
       }
-      else if(slideInput["pipeline"][currentState]["module"] === "white_capture")
+      else if(slideInput["pipeline"][currentState]["module"] === "plane_creation")
+      {
+        setPointMetadata(slideInput["pipeline"][currentState]);
+      }
+      else if(slideInput["pipeline"][currentState]["module"] === "white_creation")
       {
         // console.log("2");
-        setBoxesList(slideInput["pipeline"][currentState]["captured_white_aois"]);
+        setBoxesList(slideInput["pipeline"][currentState]["white_aois"]);
         setPointMetadata(slideInput["pipeline"][currentState]);
       }
       else
@@ -482,6 +494,12 @@ function SlideProvider(props){
 
   function previousButtonClick(){
     setCurrentState(prevState => prevState - 1);
+    if(slideInput["pipeline"][currentState]["module"] === "reference_estimation")
+        setCurrentState(prevState => prevState - 1);
+
+    if(slideInput["pipeline"][currentState]["module"] === "plane_creation")
+        setCurrentState(prevState => prevState - 1);
+
     console.log("Previous Button Clicked ", currentState);
     if(currentState >= 0 && currentState < slideInput["pipeline"].length)
     {
@@ -522,8 +540,24 @@ function SlideProvider(props){
     }
   }
 
+  function getSlideData(query)
+  {
+    console.log("Query ", query);
+
+    // const apiUrl = "";
+    // fetch(apiUrl).then((response) => {
+    //     if(!response.ok)
+    //     {
+    //         throw new Error("Network response was not ok");
+    //     }
+    //     return response.json();
+    // }).then((data)=>{
+    //     setSlideInput(data);
+    // })
+  }
+
   return (
-    <SlideContext.Provider value={{slideInput, currentGrid, currentModule, currentState, boxesList, pointMetadata, nextButtonClick, previousButtonClick, setPointMetadata}}>
+    <SlideContext.Provider value={{slideInput, currentGrid, currentModule, currentState, boxesList, pointMetadata, nextButtonClick, previousButtonClick, setPointMetadata, getSlideData}}>
       {props?.children}
     </SlideContext.Provider>
   );
