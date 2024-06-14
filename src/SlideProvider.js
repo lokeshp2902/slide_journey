@@ -10,7 +10,7 @@ const initialSlideInput =
 {
   "slide_name" : "H02LBB222P-359",
   "slide_thickness" : "Single",
-//   "slide_image_path" : "http://localhost/hdd/H02LBB222P-359/imaging_area_coordinates.png",
+  "slide_image_path" : "http://localhost/hdd/H02LBB222P-359/imaging_area_coordinates.png",
   "imaging_areas_coords" : {
     "start_x" : 127,
     "end_x" : 747,
@@ -465,6 +465,7 @@ function SlideProvider(props){
         // console.log("3");
         const boxList = [];
         boxList.push(slideInput["pipeline"][currentState]);
+        console.log(boxList);
         setBoxesList(boxList);
         setPointMetadata({});
       }
