@@ -481,6 +481,7 @@ function SlideProvider(props){
         setBoxesList(boxList);
         setPointMetadata({});
       }
+      setCurrentModule(slideInput["pipeline"][currentState]["module"]);
     }
     else
     {

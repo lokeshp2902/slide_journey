@@ -13,6 +13,7 @@ import SlideProvider from './SlideProvider'
 import Banner from './Banner';
 import CenterScreen from './CenterScreen';
 import RightScreen from './RightScreen';
+import Navigation from './Navigation';
 
 import { useSlideContext } from './SlideProvider';
 
@@ -27,10 +28,11 @@ function App() {
           <Col md={9} className="left-column vh-100">
             <Row>
               <Navbar expand="lg" className="bg-body-tertiary">
-                <Container>
-                  <Banner />
-                </Container>
+                <Navigation />
               </Navbar>
+            </Row>
+            <Row>
+              <Banner />
             </Row>
             <Row>
               <CenterScreen />
