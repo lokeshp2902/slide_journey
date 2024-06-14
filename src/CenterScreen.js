@@ -2,7 +2,7 @@ import PlaneScreen from './PlaneScreen';
 import PointFlowScreen from './PointFlowScreen';
 import SlideScreen from './SlideScreen'
 import WhiteScreen from './WhiteScreen';
-
+import Acquisition from './Acquisition';
 import { useSlideContext } from './SlideProvider';
 
 function CenterScreen(){
@@ -26,6 +26,10 @@ function CenterScreen(){
       else if("module" in pointMetadata && (pointMetadata["module"] === "plane_creation"))
       {
         return <PlaneScreen />
+      }
+      else if("module" in pointMetadata && (pointMetadata["module"] === "Acquisition"))
+      {
+        return <Acquisition />
       }
       else
       {

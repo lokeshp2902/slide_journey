@@ -319,6 +319,12 @@ const initialSlideInput =
         ]
     },
     {
+        "module": "Acquisition",
+        "z_trans" : "http://localhost/hdd/H02LBB222P-359/grid_1/z_trans.jpeg",
+        "stack_size_estimation" : "http://localhost/hdd/H02LBB222P-359/grid_1/stack_size_map.jpeg",
+        "focus_error_map" : "http://localhost/hdd/H02LBB222P-359/grid_1/fs_error_map.jpeg"
+    },
+    {
         "module": "grid_coordinates",
         "start_x": 533.7211538461538,
         "start_y": 350.9830882352941,
@@ -425,6 +431,12 @@ const initialSlideInput =
                 "trigger_miss": null
             }
         ]
+    },
+    {
+        "module": "Acquisition",
+        "z_trans" : "http://localhost/hdd/H02LBB222P-359/grid_2/z_trans.jpeg",
+        "stack_size_estimation" : "http://localhost/hdd/H02LBB222P-359/grid_2/stack_size_map.jpeg",
+        "focus_error_map" : "http://localhost/hdd/H02LBB222P-359/grid_2/fs_error_map.jpeg"
     }
   ]
 };
@@ -455,7 +467,8 @@ function SlideProvider(props){
         boxList.push(slideInput["pipeline"][currentState]);
         setBoxesList(boxList);
       }
-      else if(slideInput["pipeline"][currentState]["module"] === "plane_creation")
+      else if(slideInput["pipeline"][currentState]["module"] === "plane_creation" ||
+        slideInput["pipeline"][currentState]["module"] === "Acquisition")
       {
         setPointMetadata(slideInput["pipeline"][currentState]);
         setBoxesList([]);
@@ -477,12 +490,10 @@ function SlideProvider(props){
     }
     else
     {
-      console.log("4");
       const boxList = [];
-      boxList.push(slideInput["pipeline"][currentState]);
       setBoxesList(boxList);
-      setPointMetadata({});
-      setCurrentModule("");
+      setPointMetadata({"module" : "end"});
+      setCurrentModule("Completed");
     }
   }
 
