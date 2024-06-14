@@ -482,12 +482,14 @@ function SlideProvider(props){
       boxList.push(slideInput["pipeline"][currentState]);
       setBoxesList(boxList);
       setPointMetadata({});
+      setCurrentModule("");
     }
   }
 
   function previousButtonClick()
   {
     setCurrentState(prevState => prevState - 1);
+    console.log(currentState);
 
     if(currentState >= 0 && currentState < slideInput["pipeline"].length)
     {
@@ -530,6 +532,7 @@ function SlideProvider(props){
         boxList.push(slideInput["pipeline"][currentState]);
         setBoxesList(boxList);
         setPointMetadata({});
+        setCurrentModule("");
     }
   }
 
