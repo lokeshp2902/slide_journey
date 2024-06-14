@@ -1,0 +1,8 @@
+.left-column {
+  background-color: #f8f9fa; /* Just for visualization */
+  border-right: 1px solid #dee2e6; /* Add a 1px solid border on the right side */
+}
+
+.right-column {
+  background-color: #f8f9fa; /* Just for visualization */
+}

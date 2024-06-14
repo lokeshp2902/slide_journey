@@ -1,0 +1,423 @@
+
+    "grid_list" : {
+      "grid_1" : {
+        "aoi4589" : {
+          x : 437.61217948718,
+          y	: 602.739297385621,
+          height : 6.63,
+          width : 11,
+          directional_probing: true,
+          "probing_sequence" : [
+            {
+              "module" : "coarse",
+              "input" : {
+                "start_z" : 8000,
+                "stop_z" : 8120,
+                "ref_z" : 8060,
+                "ref_from" : "plane",
+                "magnification" : "4x"
+              },
+              "output" : {
+                "focus_metric" : 0.0,
+                "color_metric" : 0.0,
+                "best_peak" : 10,
+                "best_z" : 8000,
+                "image_path" : "",
+                "focus_metric_distribution" : [
+                  {
+                    z : 9000,
+                    focus_metric : 5
+                  },
+                  {
+                    z : 9010,
+                    focus_metric : 7
+                  },
+                  {
+                    z : 9020,
+                    focus_metric : 9
+                  },
+                  {
+                    z : 9030,
+                    focus_metric : 11
+                  },
+                  {
+                    z : 9040,
+                    focus_metric : 13
+                  },
+                  {
+                    z : 9050,
+                    focus_metric : 15
+                  },
+                  {
+                    z : 9060,
+                    focus_metric : 17
+                  },
+                  {
+                    z : 9070,
+                    focus_metric : 15
+                  },
+                  {
+                    z : 9080,
+                    focus_metric : 13
+                  },
+                  {
+                    z : 9090,
+                    focus_metric : 11
+                  }
+                ]
+              }
+            },
+            {
+              "module" : "coarse",
+              "input" : {
+                "start_z" : 8000,
+                "stop_z" : 8120,
+                "ref_z" : 8060,
+                "ref_from" : "plane",
+                "magnification" : "4x"
+              },
+              "output" : {
+                "focus_metric" : 0.0,
+                "color_metric" : 0.0,
+                "best_peak" : 10,
+                "best_z" : 8000,
+                "image_path" : "",
+                "focus_metric_distribution" : [
+                  {
+                    z : 9000,
+                    focus_metric : 5
+                  },
+                  {
+                    z : 9010,
+                    focus_metric : 7
+                  },
+                  {
+                    z : 9020,
+                    focus_metric : 9
+                  },
+                  {
+                    z : 9030,
+                    focus_metric : 11
+                  },
+                  {
+                    z : 9040,
+                    focus_metric : 13
+                  },
+                  {
+                    z : 9050,
+                    focus_metric : 15
+                  },
+                  {
+                    z : 9060,
+                    focus_metric : 17
+                  },
+                  {
+                    z : 9070,
+                    focus_metric : 15
+                  },
+                  {
+                    z : 9080,
+                    focus_metric : 13
+                  },
+                  {
+                    z : 9090,
+                    focus_metric : 11
+                  }
+                ]
+              }
+            },
+            {
+              "module" : "coarse",
+              "input" : {
+                "start_z" : 8000,
+                "stop_z" : 8120,
+                "ref_z" : 8060,
+                "ref_from" : "plane",
+                "magnification" : "4x"
+              },
+              "output" : {
+                "focus_metric" : 0.0,
+                "color_metric" : 0.0,
+                "best_peak" : 10,
+                "best_z" : 8000,
+                "image_path" : "",
+                "focus_metric_distribution" : [
+                  {
+                    z : 9000,
+                    focus_metric : 5
+                  },
+                  {
+                    z : 9010,
+                    focus_metric : 7
+                  },
+                  {
+                    z : 9020,
+                    focus_metric : 9
+                  },
+                  {
+                    z : 9030,
+                    focus_metric : 11
+                  },
+                  {
+                    z : 9040,
+                    focus_metric : 13
+                  },
+                  {
+                    z : 9050,
+                    focus_metric : 15
+                  },
+                  {
+                    z : 9060,
+                    focus_metric : 17
+                  },
+                  {
+                    z : 9070,
+                    focus_metric : 15
+                  },
+                  {
+                    z : 9080,
+                    focus_metric : 13
+                  },
+                  {
+                    z : 9090,
+                    focus_metric : 11
+                  }
+                ]
+              }
+            },
+            {
+              "module" : "coarse",
+              "input" : {
+                "start_z" : 8000,
+                "stop_z" : 8120,
+                "ref_z" : 8060,
+                "ref_from" : "plane",
+                "magnification" : "4x"
+              },
+              "output" : {
+                "focus_metric" : 0.0,
+                "color_metric" : 0.0,
+                "best_peak" : 10,
+                "best_z" : 8000,
+                "image_path" : "",
+                "focus_metric_distribution" : [
+                  {
+                    z : 9000,
+                    focus_metric : 5
+                  },
+                  {
+                    z : 9010,
+                    focus_metric : 7
+                  },
+                  {
+                    z : 9020,
+                    focus_metric : 9
+                  },
+                  {
+                    z : 9030,
+                    focus_metric : 11
+                  },
+                  {
+                    z : 9040,
+                    focus_metric : 13
+                  },
+                  {
+                    z : 9050,
+                    focus_metric : 15
+                  },
+                  {
+                    z : 9060,
+                    focus_metric : 17
+                  },
+                  {
+                    z : 9070,
+                    focus_metric : 15
+                  },
+                  {
+                    z : 9080,
+                    focus_metric : 13
+                  },
+                  {
+                    z : 9090,
+                    focus_metric : 11
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "aoi4209" : {
+          x : 337.61217948718,
+          y	: 402.739297385621,
+          height : 6.63,
+          width : 11,
+          directional_probing: true,
+          "probing_sequence" : [
+            {
+              "module" : "coarse",
+              "input" : {
+                "start_z" : 8000,
+                "stop_z" : 8120,
+                "ref_z" : 8060,
+                "ref_from" : "plane",
+                "magnification" : "4x"
+              },
+              "output" : {
+                "focus_metric" : 0.0,
+                "color_metric" : 0.0,
+                "best_peak" : 10,
+                "best_z" : 8000,
+                "image_path" : "",
+                "focus_metric_distribution" : [
+                  {
+                    z : 9000,
+                    focus_metric : 5
+                  },
+                  {
+                    z : 9010,
+                    focus_metric : 7
+                  },
+                  {
+                    z : 9020,
+                    focus_metric : 9
+                  },
+                  {
+                    z : 9030,
+                    focus_metric : 11
+                  },
+                  {
+                    z : 9040,
+                    focus_metric : 13
+                  },
+                  {
+                    z : 9050,
+                    focus_metric : 15
+                  },
+                  {
+                    z : 9060,
+                    focus_metric : 17
+                  },
+                  {
+                    z : 9070,
+                    focus_metric : 15
+                  },
+                  {
+                    z : 9080,
+                    focus_metric : 13
+                  },
+                  {
+                    z : 9090,
+                    focus_metric : 11
+                  }
+                ]
+              }
+            },
+            {
+              "module" : "coarse",
+              "input" : {
+                "start_z" : 8000,
+                "stop_z" : 8120,
+                "ref_z" : 8060,
+                "ref_from" : "plane",
+                "magnification" : "4x"
+              },
+              "output" : {
+                "focus_metric" : 0.0,
+                "color_metric" : 0.0,
+                "best_peak" : 10,
+                "best_z" : 8000,
+                "image_path" : "",
+                "focus_metric_distribution" : [
+                  {
+                    z : 9000,
+                    focus_metric : 5
+                  },
+                  {
+                    z : 9010,
+                    focus_metric : 7
+                  },
+                  {
+                    z : 9020,
+                    focus_metric : 9
+                  },
+                  {
+                    z : 9030,
+                    focus_metric : 11
+                  },
+                  {
+                    z : 9040,
+                    focus_metric : 13
+                  },
+                  {
+                    z : 9050,
+                    focus_metric : 15
+                  },
+                  {
+                    z : 9060,
+                    focus_metric : 17
+                  },
+                  {
+                    z : 9070,
+                    focus_metric : 15
+                  },
+                  {
+                    z : 9080,
+                    focus_metric : 13
+                  },
+                  {
+                    z : 9090,
+                    focus_metric : 11
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "grid_status": false
+      },
+      "grid_2" : {
+        "aoi4589" : {
+          x : 437.61217948718,
+          y	: 602.739297385621,
+          height : 6.63,
+          width : 11,
+          "probing_sequence" : [
+            {
+              "module" : "coarse",
+              "input" : {
+                "start_z" : 8000,
+                "stop_z" : 8120,
+                "ref_z" : 8060,
+                "ref_from" : "plane",
+                "magnification" : "4x"
+              },
+              "output" : {
+                "focus_metric" : 0.0,
+                "color_metric" : 0.0,
+                "best_peak" : 10,
+                "best_z" : 8000,
+                "image_path" : ""
+              }
+            },
+            {
+              "module" : "coarse",
+              "input" : {
+                "start_z" : 8000,
+                "stop_z" : 8120,
+                "ref_z" : 8060,
+                "ref_from" : "plane",
+                "magnification" : "4x"
+              },
+              "output" : {
+                "focus_metric" : 0.0,
+                "color_metric" : 0.0,
+                "best_peak" : 10,
+                "best_z" : 8000,
+                "image_path" : ""
+              }
+            }
+          ]
+        },
+        "grid_status": true
+      }
+    }
