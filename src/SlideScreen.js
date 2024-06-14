@@ -35,7 +35,7 @@ function SlideScreen()
         );
       }
     }
-    // console.log("Path " , slideInput["slide_image_path"])
+    console.log("Path " , slideInput["slide_image_path"])
     img.src = slideInput["slide_image_path"];
 
   }, [slideInput, boxesList]);

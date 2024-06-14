@@ -29,7 +29,7 @@ function CenterScreen(){
     }
     else
     {
-      // console.log("12");
+      console.log("12");
       return <SlideScreen />;
     }
   }

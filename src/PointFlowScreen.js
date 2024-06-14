@@ -40,6 +40,7 @@ function PointFlowScreen()
         input_keys.push(key)
       });
     }
+    input_keys.push("focus_metric_distribution");
     // console.log(input_keys);
     return input_keys;
   }

@@ -10,7 +10,7 @@ const initialSlideInput =
 {
   "slide_name" : "H02LBB222P-359",
   "slide_thickness" : "Single",
-  "slide_image_path" : "http://localhost/hdd/H02LBB222P-359/imaging_area_coordinates.png",
+//   "slide_image_path" : "http://localhost/hdd/H02LBB222P-359/imaging_area_coordinates.png",
   "imaging_areas_coords" : {
     "start_x" : 127,
     "end_x" : 747,
@@ -172,7 +172,7 @@ const initialSlideInput =
                     "valid_blobs_count": 35,
                     "valid_focus_metric_blocks_count": 35,
                     "pen_mark_status": false,
-                    "material_status": "Tissue"
+                    "material_status": "Tissue",
                 },
                 "total_time": 1,
                 "trigger_miss": null
