@@ -437,14 +437,9 @@ function SlideProvider(props){
   const [boxesList, setBoxesList] = useState([]);
   const [pointMetadata, setPointMetadata] = useState({});
 
-  function nextButtonClick(){
+  function nextButtonClick()
+  {
     setCurrentState(prevState => prevState + 1);
-
-    // if(slideInput["pipeline"][currentState]["module"] === "reference_estimation")
-    // {
-    //     console.log("Reference Estimation");
-    //     setCurrentState(prevState => prevState + 1);
-    // }
 
     console.log("Next Button Clicked ", currentState);
     if(currentState >= 0 && currentState < slideInput["pipeline"].length)
@@ -454,8 +449,6 @@ function SlideProvider(props){
       if(slideInput["pipeline"][currentState]["module"] === "best_z_level_estimation" ||
         slideInput["pipeline"][currentState]["module"] === "focus_sampling")
       {
-        // console.log("1");
-        // console.log(slideInput["pipeline"][currentState]["module"])
         setPointMetadata(slideInput["pipeline"][currentState]);
 
         const boxList = [];
@@ -465,16 +458,15 @@ function SlideProvider(props){
       else if(slideInput["pipeline"][currentState]["module"] === "plane_creation")
       {
         setPointMetadata(slideInput["pipeline"][currentState]);
+        setBoxesList([]);
       }
       else if(slideInput["pipeline"][currentState]["module"] === "white_creation")
       {
-        // console.log("2");
         setBoxesList(slideInput["pipeline"][currentState]["white_aois"]);
         setPointMetadata(slideInput["pipeline"][currentState]);
       }
       else
       {
-        // console.log("3");
         const boxList = [];
         boxList.push(slideInput["pipeline"][currentState]);
         console.log(boxList);
@@ -493,51 +485,51 @@ function SlideProvider(props){
     }
   }
 
-  function previousButtonClick(){
+  function previousButtonClick()
+  {
     setCurrentState(prevState => prevState - 1);
-    if(slideInput["pipeline"][currentState]["module"] === "reference_estimation")
-        setCurrentState(prevState => prevState - 1);
 
-    if(slideInput["pipeline"][currentState]["module"] === "plane_creation")
-        setCurrentState(prevState => prevState - 1);
-
-    console.log("Previous Button Clicked ", currentState);
     if(currentState >= 0 && currentState < slideInput["pipeline"].length)
     {
-      console.log("Previous click ", slideInput["pipeline"][currentState]["module"]);
+      console.log("inside Previous click ", slideInput["pipeline"][currentState]["module"]);
+
       if(slideInput["pipeline"][currentState]["module"] === "best_z_level_estimation" ||
-        slideInput["pipeline"][currentState]["module"] === "focus_sampling")
+       slideInput["pipeline"][currentState]["module"] === "focus_sampling")
       {
-        // console.log("1");
-        // console.log(slideInput["pipeline"][currentState]["module"])
         setPointMetadata(slideInput["pipeline"][currentState]);
 
         const boxList = [];
         boxList.push(slideInput["pipeline"][currentState]);
         setBoxesList(boxList);
       }
-      else if(slideInput["pipeline"][currentState]["module"] === "white_capture")
+      else if(slideInput["pipeline"][currentState]["module"] === "plane_creation")
       {
-        // console.log("2");
-        setBoxesList(slideInput["pipeline"][currentState]["captured_white_aois"]);
+        setPointMetadata(slideInput["pipeline"][currentState]);
+        setBoxesList([]);
+      }
+      else if(slideInput["pipeline"][currentState]["module"] === "white_creation")
+      {
+        setBoxesList(slideInput["pipeline"][currentState]["white_aois"]);
         setPointMetadata(slideInput["pipeline"][currentState]);
       }
       else
       {
-        // console.log("3");
+        const boxList = [];
+        boxList.push(slideInput["pipeline"][currentState]);
+        console.log(boxList);
+        setBoxesList(boxList);
+
+        setPointMetadata({});
+      }
+      setCurrentModule(slideInput["pipeline"][currentState]["module"]);
+    }
+    else
+    {
+        console.log("4");
         const boxList = [];
         boxList.push(slideInput["pipeline"][currentState]);
         setBoxesList(boxList);
         setPointMetadata({});
-      }
-    }
-    else
-    {
-      // console.log("4");
-      const boxList = [];
-      boxList.push(slideInput["pipeline"][currentState]);
-      setBoxesList(boxList);
-      setPointMetadata({});
     }
   }
 
