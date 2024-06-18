@@ -54,7 +54,12 @@ function WhiteScreen()
     <>
     {getWhiteMatrix()}
     <h1>White Found {pointMetadata["white_found_status"]}</h1>
-    <img width={1} height={100} src={pointMetadata["white_path"]}/>
+    <Col>
+      <img width={250} height={150} src={pointMetadata["white_path"]}/>
+    </Col>
+    <Col>
+    </Col>
+  
     </>
   );
 }

@@ -10,6 +10,7 @@ function CenterScreen(){
 
   function currentScreen()
   {
+    console.log('block currentState',currentState);
     if(currentState > 0)
     {
       if("module" in pointMetadata && (pointMetadata["module"] === "best_z_level_estimation" ||  pointMetadata["module"] === "focus_sampling"))

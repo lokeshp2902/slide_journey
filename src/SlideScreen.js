@@ -3,6 +3,8 @@ import React, { useState, useEffect, useRef} from 'react';
 
 import {useSlideContext} from './hooks'
 
+import Row from 'react-bootstrap/Row';
+
 function SlideScreen()
 {
   const canvasRef = useRef(null);
@@ -26,8 +28,8 @@ function SlideScreen()
       for (let value of boxesList) {
         // console.log(value);
         // Draw the box on the canvas
-        ctx.strokeStyle = 'green';
-        ctx.lineWidth = 0.5;
+        ctx.strokeStyle = '#006400';
+        ctx.lineWidth = 2;
         ctx.strokeRect(
           (value.start_x - slideInput["imaging_areas_coords"]["start_x"])/2, 
           (value.start_y - slideInput["imaging_areas_coords"]["start_y"])/2, 
@@ -35,9 +37,9 @@ function SlideScreen()
         );
       }
     }
-    // console.log("Path " , slideInput["slide_image_path"])
+    console.log("Path " , slideInput["slide_image_path"])
     img.src = slideInput["slide_image_path"];
-
+    console.log('blok path',img.src)
   }, [slideInput, boxesList]);
 
   return(

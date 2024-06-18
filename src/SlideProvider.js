@@ -10,7 +10,7 @@ const initialSlideInput =
 {
   "slide_name" : "H02LBB222P-359",
   "slide_thickness" : "Single",
-  "slide_image_path" : "http://localhost/hdd/H02LBB222P-359/imaging_area_coordinates.png",
+  "slide_image_path" : "http://localhost/hdd/H02LBB222P-359/slide_image.png",
   "imaging_areas_coords" : {
     "start_x" : 127,
     "end_x" : 747,
@@ -28,7 +28,7 @@ const initialSlideInput =
     },
     {
         "module": "plane_creation",
-        "debug_image": "http://localhost/hdd/H02LBB222P-359/grid_1/points_selected_no_tma.jpeg",
+        "debug_image": "http://localhost/hdd/H02LBB222P-359/grid_1/points_selected.jpeg",
         "plane_x_coff": null,
         "plane_y_coeff": null,
         "plane_const": null,
