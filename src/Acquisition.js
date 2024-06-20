@@ -9,15 +9,15 @@ function Acquisition()
     <>
       <Row>
         <Col>
-          <Row><h1>Z Trans</h1></Row>
+          <Row><h3>Z Translation</h3></Row>
           <img width={300} height={600} src={pointMetadata["z_trans"]}/>
         </Col>
         <Col>
-          <Row><h1>Stack Size Esimtaion</h1></Row>
+          <Row><h3>Stack Size Esimtaion</h3></Row>
           <img width={300} height={600} src={pointMetadata["stack_size_estimation"]}/>
         </Col>
         <Col>
-          <Row><h1>Focus Error Map</h1></Row>
+          <Row><h3>Focus Error Map</h3></Row>
           <img width={300} height={600} src={pointMetadata["focus_error_map"]}/>
         </Col>
       </Row>

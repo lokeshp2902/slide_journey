@@ -132,7 +132,14 @@ function PointFlowScreen() {
                       <Arrow /> */}
                       {col_index > 1 && <RightArrow style={{ width: '5rem', height: '2.5rem' }} />}
                       {col_index === 1 && <RectangleColumn></RectangleColumn>}
-                      <RectangleColumn>{column_name}</RectangleColumn>
+                      <RectangleColumn>
+                        <strong>
+                          {pointMetadata.sequence[col_index-1].input["magnifcation"]}-{column_name}
+                        </strong>
+                        (
+                          {pointMetadata.sequence[col_index-1]["total_time"]}sec
+                        )
+                      </RectangleColumn>
                     </React.Fragment>
                   )
                 })

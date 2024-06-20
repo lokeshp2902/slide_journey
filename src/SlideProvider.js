@@ -24,20 +24,26 @@ const initialSlideInput =
         "start_y": 947.247794117647,
         "end_x": 610.6987179487179,
         "end_y": 1013.499428104575,
+        "color": "#006400",
         "grid_id": 1
     },
-    {
-        "module": "plane_creation",
-        "debug_image": "http://localhost/hdd/H02LBB222P-359/grid_1/points_selected.jpeg",
-        "plane_x_coff": null,
-        "plane_y_coeff": null,
-        "plane_const": null,
-        "row_diff": null,
-        "col_diff": null,
-        "confidence_score_threshold": 0,
-        "plane_status": "PlaneStatus.NOT_CONFIDENT",
-        "material_type": 0
-    },
+    // {
+    //     "module": "plane_creation",
+    //     "debug_image": "http://localhost/hdd/H02LBB222P-359/grid_1/points_selected_no_tma.jpeg",
+    //     "plane_x_coff": null,
+    //     "plane_y_coeff": null,
+    //     "plane_const": null,
+    //     "row_diff": null,
+    //     "col_diff": null,
+    //     "confidence_score_threshold": 0,
+    //     "plane_status": "PlaneStatus.NOT_CONFIDENT",
+    //     "material_type": 0,
+    //     "delta_z_flag": "",
+    //     "collinearity_flag": "",
+    //     "spatial_flag": "",
+    //     "confidence_score": "",
+    //     "delta_z_value": ""
+    // },
     {
         "is_tissue_plane_available": "False",
         "material_status": 1,
@@ -52,6 +58,7 @@ const initialSlideInput =
         "start_y": 980.373611111111,
         "end_x": 577.7083333333334,
         "end_y": 986.9987745098039,
+        "color": "#006400",
         "direction": "",
         "grid_name": "grid_1",
         "sequence": [
@@ -97,7 +104,8 @@ const initialSlideInput =
                         "set_z_position": "46",
                         "turn_on_camera_trigger": "9"
                     }
-                }
+                },
+                "total_time": 1.5
             },
             {
                 "input": {
@@ -149,17 +157,19 @@ const initialSlideInput =
                         "set_z_position": "79",
                         "turn_on_camera_trigger": "10"
                     }
-                }
+                },
+                "total_time": 1.2
             },
             {
                 "input": {
-                    "magnifcation": 1,
+                    "magnifcation": "40x",
                     "start_z": 9038.125,
                     "step_size": 1.5625,
                     "stop_z": 9080.3125
                 },
                 "module": "fine",
                 "output": {
+                    "best_z": 9060,
                     "blobs_with_color": 35,
                     "color_metric": 277.0521410014397,
                     "confidence_score": 0.8631244607133388,
@@ -194,8 +204,12 @@ const initialSlideInput =
                 "end_x": 302.78846153846155,
                 "end_y": 662.3657679738562,
                 "aoi_name": "aoi5032",
+                "color": "blue",
                 "capture_status": true,
                 "image_path": "http://localhost/hdd/H02LBB222P-359/white_aois_from_1x/aoi5032.bmp",
+                "smoothening_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/",
+                "profile_check_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/aoi5032_wc_image.jpeg",
+                "final_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/",
                 "capture_time": 0.750220775604248
             },
             {
@@ -204,8 +218,12 @@ const initialSlideInput =
                 "end_x": 313.7852564102564,
                 "end_y": 662.3657679738562,
                 "aoi_name": "aoi5033",
+                "color": "blue",
                 "capture_status": true,
                 "image_path": "http://localhost/hdd/H02LBB222P-359/white_aois_from_1x/aoi5033.bmp",
+                "smoothening_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/",
+                "profile_check_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/",
+                "final_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/",
                 "capture_time": 0.17982959747314453
             },
             {
@@ -214,8 +232,12 @@ const initialSlideInput =
                 "end_x": 324.78205128205127,
                 "end_y": 662.3657679738562,
                 "aoi_name": "aoi5034",
+                "color": "blue",
                 "capture_status": true,
                 "image_path": "http://localhost/hdd/H02LBB222P-359/white_aois_from_1x/aoi5034.bmp",
+                "smoothening_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/",
+                "profile_check_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/",
+                "final_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/",
                 "capture_time": 0.19338202476501465
             },
             {
@@ -224,8 +246,12 @@ const initialSlideInput =
                 "end_x": 302.78846153846155,
                 "end_y": 668.990931372549,
                 "aoi_name": "aoi5115",
+                "color": "blue",
                 "capture_status": true,
                 "image_path": "http://localhost/hdd/H02LBB222P-359/white_aois_from_1x/aoi5115.bmp",
+                "smoothening_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/",
+                "profile_check_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/aoi5115_wc_image.jpeg",
+                "final_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/",
                 "capture_time": 0.19524383544921875
             },
             {
@@ -234,8 +260,12 @@ const initialSlideInput =
                 "end_x": 313.7852564102564,
                 "end_y": 668.990931372549,
                 "aoi_name": "aoi5114",
+                "color": "blue",
                 "capture_status": true,
                 "image_path": "http://localhost/hdd/H02LBB222P-359/white_aois_from_1x/aoi5114.bmp",
+                "smoothening_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/aoi5114_threshold_mask.jpeg",
+                "profile_check_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/",
+                "final_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/aoi5114_mean_replaced.jpeg",
                 "capture_time": 0.20549249649047852
             },
             {
@@ -244,8 +274,12 @@ const initialSlideInput =
                 "end_x": 324.78205128205127,
                 "end_y": 668.990931372549,
                 "aoi_name": "aoi5113",
+                "color": "blue",
                 "capture_status": true,
                 "image_path": "http://localhost/hdd/H02LBB222P-359/white_aois_from_1x/aoi5113.bmp",
+                "smoothening_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/",
+                "profile_check_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/aoi5113_wc_image.jpeg",
+                "final_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/",
                 "capture_time": 0.1937105655670166
             },
             {
@@ -254,8 +288,12 @@ const initialSlideInput =
                 "end_x": 302.78846153846155,
                 "end_y": 675.6160947712418,
                 "aoi_name": "aoi5146",
+                "color": "blue",
                 "capture_status": true,
                 "image_path": "http://localhost/hdd/H02LBB222P-359/white_aois_from_1x/aoi5146.bmp",
+                "smoothening_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/",
+                "profile_check_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/aoi5146_wc_image.jpeg",
+                "final_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/",
                 "capture_time": 0.18944406509399414
             },
             {
@@ -264,8 +302,12 @@ const initialSlideInput =
                 "end_x": 313.7852564102564,
                 "end_y": 675.6160947712418,
                 "aoi_name": "aoi5147",
+                "color": "blue",
                 "capture_status": true,
                 "image_path": "http://localhost/hdd/H02LBB222P-359/white_aois_from_1x/aoi5147.bmp",
+                "smoothening_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/aoi5147_threshold_mask.jpeg",
+                "profile_check_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/aoi5147_wc_image.jpeg",
+                "final_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/aoi5147_mean_replaced.jpeg",
                 "capture_time": 0.19226980209350586
             },
             {
@@ -274,8 +316,12 @@ const initialSlideInput =
                 "end_x": 324.78205128205127,
                 "end_y": 675.6160947712418,
                 "aoi_name": "aoi5148",
+                "color": "blue",
                 "capture_status": true,
                 "image_path": "http://localhost/hdd/H02LBB222P-359/white_aois_from_1x/aoi5148.bmp",
+                "smoothening_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/",
+                "profile_check_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/aoi5148_wc_image.jpeg",
+                "final_img_path": "http://localhost/hdd/H02LBB222P-359/white_aois/",
                 "capture_time": 0.193342924118042
             }
         ],
@@ -291,16 +337,18 @@ const initialSlideInput =
         "start_y": 980.373611111111,
         "end_x": 610.698717948718,
         "end_y": 986.9987745098039,
+        "color": "#006400",
         "sequence": [
             {
                 "input": {
-                    "magnifcation": 1,
+                    "magnifcation": "40x",
                     "start_z": 9031.875,
                     "step_size": 1.5625,
                     "stop_z": 9089.6875
                 },
                 "module": "fine",
                 "output": {
+                    "best_z": 9060,
                     "blobs_with_color": 35,
                     "color_metric": 248.62503923005306,
                     "confidence_score": 0.878098367848807,
@@ -319,6 +367,12 @@ const initialSlideInput =
         ]
     },
     {
+        "module": "planarity_rejection",
+        "line_slope": 6.5,
+        "plane_slope": 4.0,
+        "rejection_status": false
+    },
+    {
         "module": "Acquisition",
         "z_trans" : "http://localhost/hdd/H02LBB222P-359/grid_1/z_trans.jpeg",
         "stack_size_estimation" : "http://localhost/hdd/H02LBB222P-359/grid_1/stack_size_map.jpeg",
@@ -330,6 +384,7 @@ const initialSlideInput =
         "start_y": 350.9830882352941,
         "end_x": 599.7019230769231,
         "end_y": 423.859885620915,
+        "color": "#006400",
         "grid_id": 2
     },
     {
@@ -342,7 +397,12 @@ const initialSlideInput =
         "col_diff": 7,
         "confidence_score_threshold": 0.4,
         "plane_status": "PlaneStatus.LOW_CONFIDENT",
-        "material_type": 1
+        "material_type": 1,
+        "delta_z_flag": "",
+        "collinearity_flag": "",
+        "spatial_distribution_flag": "",
+        "confidence_score": "",
+        "delta_z_value": ""
     },
     {
         "is_tissue_plane_available": "True",
@@ -364,18 +424,20 @@ const initialSlideInput =
         "start_y": 390.73406862745094,
         "end_x": 577.7083333333334,
         "end_y": 397.35923202614373,
+        "color": "#006400",
         "direction": "",
         "grid_name": "grid_2",
         "sequence": [
             {
                 "input": {
-                    "magnifcation": 1,
+                    "magnifcation": "40x",
                     "start_z": 9025,
                     "step_size": 1.5625,
                     "stop_z": 9098.4375
                 },
                 "module": "fine",
                 "output": {
+                    "best_z": 9060,
                     "blobs_with_color": 35,
                     "color_metric": 325.4498679294663,
                     "confidence_score": 0.8881924142235754,
@@ -405,16 +467,18 @@ const initialSlideInput =
         "start_y": 390.73406862745094,
         "end_x": 555.7147435897436,
         "end_y": 397.35923202614373,
+        "color": "#006400",
         "sequence": [
             {
                 "input": {
-                    "magnifcation": 1,
+                    "magnifcation": "40x",
                     "start_z": 9048.4375,
                     "step_size": 1.5625,
                     "stop_z": 9106.25
                 },
                 "module": "fine",
                 "output": {
+                    "best_z": 9060,
                     "blobs_with_color": 35,
                     "color_metric": 227.4986690056407,
                     "confidence_score": 0.8211751904038338,
@@ -437,6 +501,10 @@ const initialSlideInput =
         "z_trans" : "http://localhost/hdd/H02LBB222P-359/grid_2/z_trans.jpeg",
         "stack_size_estimation" : "http://localhost/hdd/H02LBB222P-359/grid_2/stack_size_map.jpeg",
         "focus_error_map" : "http://localhost/hdd/H02LBB222P-359/grid_2/fs_error_map.jpeg"
+    },
+    {
+        "module": "rescan_acq",
+        "rescan_image": "http://localhost/hdd/H02LBB222P-359/acq_intermediate_images/re_scanned_areas.jpeg"
     }
   ]
 };
@@ -452,6 +520,10 @@ function SlideProvider(props){
   function nextButtonClick()
   {
     setCurrentState(prevState => prevState + 1);
+    console.log("module : ", slideInput["pipeline"][currentState]["module"]);
+    if (slideInput["pipeline"][currentState]["module"] === "grid_coordinates"){
+        setCurrentGrid(slideInput["pipeline"][currentState]["grid_id"]);
+    }
 
     console.log("Next Button Clicked ", currentState);
     if(currentState >= 0 && currentState < slideInput["pipeline"].length)
@@ -462,36 +534,36 @@ function SlideProvider(props){
         slideInput["pipeline"][currentState]["module"] === "focus_sampling")
       {
         setPointMetadata(slideInput["pipeline"][currentState]);
-
-        const boxList = [];
-        boxList.push(slideInput["pipeline"][currentState]);
-        setBoxesList(boxList);
+        setBoxesList(prevItems => [...prevItems, ...[slideInput["pipeline"][currentState]]]);
       }
       else if(slideInput["pipeline"][currentState]["module"] === "plane_creation" ||
         slideInput["pipeline"][currentState]["module"] === "Acquisition")
       {
         setPointMetadata(slideInput["pipeline"][currentState]);
-        setBoxesList([]);
       }
       else if(slideInput["pipeline"][currentState]["module"] === "white_creation")
       {
-        setBoxesList(slideInput["pipeline"][currentState]["white_aois"]);
+        setBoxesList(prevItems => [...prevItems, ...slideInput["pipeline"][currentState]["white_aois"]]);
+        setPointMetadata(slideInput["pipeline"][currentState]);
+      }
+      else if(slideInput["pipeline"][currentState]["module"] === "planarity_rejection")
+      {
+        setPointMetadata(slideInput["pipeline"][currentState]);
+      }
+      else if(slideInput["pipeline"][currentState]["module"] === "rescan_acq")
+      {
         setPointMetadata(slideInput["pipeline"][currentState]);
       }
       else
       {
-        const boxList = [];
-        boxList.push(slideInput["pipeline"][currentState]);
-        console.log(boxList);
-        setBoxesList(boxList);
+        setBoxesList(prevItems => [...prevItems, ...[slideInput["pipeline"][currentState]]]);
         setPointMetadata({});
       }
       setCurrentModule(slideInput["pipeline"][currentState]["module"]);
     }
     else
     {
-      const boxList = [];
-      setBoxesList(boxList);
+      setBoxesList(prevItems => [...prevItems, ...[slideInput["pipeline"][currentState]]]);
       setPointMetadata({"module" : "end"});
       setCurrentModule("Completed");
     }

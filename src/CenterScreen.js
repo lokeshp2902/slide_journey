@@ -4,6 +4,8 @@ import SlideScreen from './SlideScreen'
 import WhiteScreen from './WhiteScreen';
 import Acquisition from './Acquisition';
 import { useSlideContext } from './SlideProvider';
+import PlanarityRejection from './PlanarityRejectionScreen';
+import RescanAcq from './RescanScreen';
 
 function CenterScreen(){
   const {currentState, pointMetadata} = useSlideContext();
@@ -31,6 +33,14 @@ function CenterScreen(){
       else if("module" in pointMetadata && (pointMetadata["module"] === "Acquisition"))
       {
         return <Acquisition />
+      }
+      else if("module" in pointMetadata && (pointMetadata["module"] === "planarity_rejection"))
+      {
+        return <PlanarityRejection />
+      }
+      else if("module" in pointMetadata && (pointMetadata["module"] === "rescan_acq"))
+      {
+        return <RescanAcq />
       }
       else
       {
