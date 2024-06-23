@@ -13,7 +13,7 @@ function Banner(){
       <RectangleRow>
         <RectangleColumn md={3}><strong>Slide Name : </strong>{slideInput["slide_name"]}</RectangleColumn>
         <RectangleColumn md={3}><strong>Slide Thickness : </strong>{slideInput["slide_thickness"]}</RectangleColumn>
-        <RectangleColumn md={2}><strong>Current Grid : </strong>{currentGrid}</RectangleColumn>
+        <RectangleColumn md={2}><strong>Current Grid :- </strong>{currentGrid}</RectangleColumn>
         <RectangleColumn md={4}><strong>Current Module : </strong>{currentModule.split("_").join(" ")}</RectangleColumn>
       </RectangleRow>
     </>

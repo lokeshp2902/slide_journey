@@ -81,7 +81,7 @@ function PointFlowScreen() {
           if (rowNames[rowIdx] in pointMetadata.sequence[idx]["output"]) {
             if (rowNames[rowIdx] === "focus_metric_distribution") {
               // console.log("data", pointMetadata.sequence[idx]["output"][rowNames[rowIdx]])
-              matrix[rowIdx][idx + 1] = <CustomCol><LineChart flow={pointMetadata.sequence[idx]["output"][rowNames[rowIdx]]} /></CustomCol>
+              matrix[rowIdx][idx + 1] = <CellContainer><CustomCol><LineChart flow={pointMetadata.sequence[idx]["output"][rowNames[rowIdx]]} /></CustomCol></CellContainer>
             }
             else if (rowNames[rowIdx] === "image_path") {
               matrix[rowIdx][idx + 1] = <CellContainer><img width={150} height={75} src={pointMetadata.sequence[idx]["output"][rowNames[rowIdx]]} /></CellContainer>
@@ -161,10 +161,10 @@ function PointFlowScreen() {
 export default PointFlowScreen;
 
 const CustomCol = styled(Col)`
-canvas{
-  width: 150px !important;
-  height: 150px !important;
-}
+  canvas{
+    width: 150px !important;
+    height: 150px !important;
+  }
 `
 
 const RectangleColumn = styled(Col)`

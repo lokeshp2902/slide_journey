@@ -13,25 +13,23 @@ function WhiteScreen()
   function getWhiteMatrix()
   {
     const matrix = [];
-    for (let rowIdx = 0; rowIdx < 10; rowIdx++) {
+    const column_names = ["aoi_name", "image_path", "smoothening_img_path", "profile_check_img_path", "final_img_path"];
+    const rows_count = 10;
+
+    for (let rowIdx = 0; rowIdx < rows_count; rowIdx++) {
       const row = []
-      for(let colIdx = 0; colIdx < 5; colIdx++){
+      for(let colIdx = 0; colIdx < column_names.length; colIdx++){
         row.push(null);
       }
       matrix.push(row)
-      // console.log(rowIdx);
     }
 
-    // let idx = 0;
-    // for (let rowIdx = 0; rowIdx < 3; rowIdx++) {
-    //   for(let colIdx = 0; colIdx < 3; colIdx++){
-    //     matrix[rowIdx][colIdx] = <Col>
-    //         <h5>{pointMetadata["white_aois"][idx]["aoi_name"]}</h5>
-    //         <img width={150} height={75} src={pointMetadata["white_aois"][idx]["image_path"]}/>
-    //       </Col>;
-    //     idx++;
-    //   }
+    // for(let col_idx=0; col_idx<column_names.length; col_idx++){
+    //   matrix[0][col_idx] = <h3>{column_names[col_idx]}</h3>;
     // }
+    // column_names.forEach((column_name) => {
+    //   matrix[0][column_names.indexOf(column_name)] = <h3>{column_name}</h3>;
+    // });
 
     matrix[0][0] = <h3>AOI Name</h3>;
     matrix[0][1] = <h3>AOI Captured</h3>;
@@ -39,33 +37,14 @@ function WhiteScreen()
     matrix[0][3] = <h3>Profile Check</h3>;
     matrix[0][4] = <h3>Final Outcome</h3>;
 
-    for (let row_idx = 0; row_idx < 10; row_idx++) {
-      if (row_idx > 0) {
-        matrix[row_idx][0] = <strong>{pointMetadata["white_aois"][row_idx - 1]["aoi_name"]}</strong>
-      }
-    }
-
-    for (let row_idx = 0; row_idx < 10; row_idx++) {
-      if (row_idx > 0) {
-        matrix[row_idx][1] = <img width={120} height={60} src={pointMetadata["white_aois"][row_idx - 1]["image_path"]}/>
-      }
-    }
-
-    for (let row_idx = 0; row_idx < 10; row_idx++) {
-      if (row_idx > 0) {
-        matrix[row_idx][2] = <img width={120} height={60} src={pointMetadata["white_aois"][row_idx - 1]["smoothening_img_path"]}/>
-      }
-    }
-
-    for (let row_idx = 0; row_idx < 10; row_idx++) {
-      if (row_idx > 0) {
-        matrix[row_idx][3] = <img width={120} height={60} src={pointMetadata["white_aois"][row_idx - 1]["profile_check_img_path"]}/>
-      }
-    }
-
-    for (let row_idx = 0; row_idx < 10; row_idx++) {
-      if (row_idx > 0) {
-        matrix[row_idx][4] = <img width={120} height={60} src={pointMetadata["white_aois"][row_idx - 1]["final_img_path"]}/>
+    for (let col_idx = 0; col_idx < column_names.length; col_idx++){
+      for (let row_idx = 1; row_idx < rows_count; row_idx++) {
+        if(col_idx === 0){
+          matrix[row_idx][col_idx] = <strong>{pointMetadata["white_aois"][row_idx - 1][column_names[col_idx]]}</strong>
+        }
+        else{
+          matrix[row_idx][col_idx] = <img width={120} height={60} src={pointMetadata["white_aois"][row_idx - 1][column_names[col_idx]]}/>
+        }
       }
     }
 

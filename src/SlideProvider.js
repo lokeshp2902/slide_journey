@@ -6,6 +6,9 @@ export const useSlideContext = () => {
   return useContext(SlideContext);
 };
 
+// const Data = require('/Users/sankubhanu.prakash/Desktop/slide_journey/src/story.json');
+// const initialSlideInput = Data;
+// console.log("Data : ", initialSlideInput);
 const initialSlideInput = 
 {
   "slide_name" : "H02LBB222P-359",
@@ -17,6 +20,7 @@ const initialSlideInput =
     "start_y" : 73,
     "end_y" : 1315
   },
+  "profile": "Bacti profile is running",
   "pipeline": [
     {
         "module": "grid_coordinates",
@@ -368,6 +372,7 @@ const initialSlideInput =
     },
     {
         "module": "planarity_rejection",
+        "planarity_threshold": 9.0625,
         "line_slope": 6.5,
         "plane_slope": 4.0,
         "rejection_status": false
@@ -520,7 +525,8 @@ function SlideProvider(props){
   function nextButtonClick()
   {
     setCurrentState(prevState => prevState + 1);
-    console.log("module : ", slideInput["pipeline"][currentState]["module"]);
+
+    // Setting the current grid id
     if (slideInput["pipeline"][currentState]["module"] === "grid_coordinates"){
         setCurrentGrid(slideInput["pipeline"][currentState]["grid_id"]);
     }
