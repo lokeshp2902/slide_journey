@@ -1,17 +1,19 @@
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import LineChart from './LineChart';
-import React from 'react';
+import React, { useState } from 'react';
 
 //icons 
 import { ReactComponent as RightArrow } from '../src/assets/icons/right-arrow.svg'
 
 import { useSlideContext } from './SlideProvider';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 import styled from 'styled-components';
 
 function PointFlowScreen() {
   const { pointMetadata } = useSlideContext();
+  const [showModal, setShowModal] = useState(false);
+
+  const handleClose = () => setShowModal(false);
+  const handleShow = () => setShowModal(true);
 
   const getRowNames = () => {
     const input_keys = [""];
@@ -37,10 +39,14 @@ function PointFlowScreen() {
         input_keys.push(key)
       });
     }
-    input_keys.push("focus_metric_distribution");
+    // input_keys.push("focus_metric_distribution");
     // console.log(input_keys);
     return input_keys;
   }
+
+  const isInteger = (num) => {
+    return Number.isInteger(num);
+  };
 
   const getColumnNames = () => {
     const input_keys = [""];
@@ -50,6 +56,49 @@ function PointFlowScreen() {
       }
     }
     return input_keys;
+  }
+
+  const generateFineDistribution = () => {
+
+    let fine_fm_distrib = []
+    for (let idx = 0; idx < pointMetadata.sequence.length; idx++) {
+      if (pointMetadata.sequence[idx]["module"] === "fine") {
+        fine_fm_distrib = pointMetadata.sequence[idx]["output"]["focus_metric_distribution"];
+        // console.log("Fine matrix length : ", fine_fm_distrib.length);
+      }
+    }
+
+    const fine_matrix = [];
+    for (let rowIdx = 0; rowIdx < 5; rowIdx++) {
+      const row = [];
+      for (let colIdx = 0; colIdx < 7; colIdx++) {
+        row.push(null);
+      }
+      fine_matrix.push(row);
+    }
+
+    let index = 0;
+    for (let col_idx=0; col_idx<7; col_idx++){
+      for (let row_idx=0; row_idx<5; row_idx++){
+        // console.log("Focus metric : ", fine_fm_distrib[index]);
+        fine_matrix[row_idx][col_idx] = (<CellContainer><SizeCol><LineChart flow={fine_fm_distrib[index]} /></SizeCol></CellContainer>);
+        index++;
+      }
+    }
+
+    const outputFineMatrix = [];
+    for (let rowIdx = 0; rowIdx < fine_matrix.length; rowIdx++) {
+      const row = [];
+      for (let colIdx = 0; colIdx < fine_matrix[0].length; colIdx++) {
+        if (fine_matrix[rowIdx][colIdx] == null)
+          row.push(<CellContainer>NA</CellContainer>);
+        else
+          row.push(fine_matrix[rowIdx][colIdx]);
+      }
+      outputFineMatrix.push(<Row>{row}</Row>);
+    }
+
+    return <Container>{outputFineMatrix}</Container>;
   }
 
   const generateMatrix = () => {
@@ -80,18 +129,33 @@ function PointFlowScreen() {
         for (let rowIdx = 0; rowIdx < rowNames.length; rowIdx++) {
           if (rowNames[rowIdx] in pointMetadata.sequence[idx]["output"]) {
             if (rowNames[rowIdx] === "focus_metric_distribution") {
-              // console.log("data", pointMetadata.sequence[idx]["output"][rowNames[rowIdx]])
-              matrix[rowIdx][idx + 1] = <CellContainer><CustomCol><LineChart flow={pointMetadata.sequence[idx]["output"][rowNames[rowIdx]]} /></CustomCol></CellContainer>
+              console.log("Col module : ", pointMetadata.sequence[idx].module);
+              if (pointMetadata.sequence[idx].module === "fine") {
+                matrix[rowIdx][idx + 1] = (<CellContainer><button onClick={handleShow}>Fine FM Distribution</button></CellContainer>);
+              } else {
+                matrix[rowIdx][idx + 1] = (<CellContainer><CustomCol><LineChart flow={pointMetadata.sequence[idx]["output"][rowNames[rowIdx]]} /></CustomCol></CellContainer>);
+              }
             }
             else if (rowNames[rowIdx] === "image_path") {
-              matrix[rowIdx][idx + 1] = <CellContainer><img width={150} height={75} src={pointMetadata.sequence[idx]["output"][rowNames[rowIdx]]} /></CellContainer>
+              matrix[rowIdx][idx + 1] = (<CellContainer><img width={150} height={75} src={pointMetadata.sequence[idx]["output"][rowNames[rowIdx]]} /></CellContainer>);
             }
             else {
-              matrix[rowIdx][idx + 1] = <CellContainer>{pointMetadata.sequence[idx]["output"][rowNames[rowIdx]]}</CellContainer>
+              if (typeof pointMetadata.sequence[idx]["output"][rowNames[rowIdx]] === 'number'){
+                if (isInteger(pointMetadata.sequence[idx]["output"][rowNames[rowIdx]])) {
+                  matrix[rowIdx][idx + 1] = (<CellContainer>{pointMetadata.sequence[idx]["output"][rowNames[rowIdx]]}</CellContainer>);
+                } else
+                {
+                  console.log("Point data : ", pointMetadata.sequence[idx]["output"][rowNames[rowIdx]]);
+                  matrix[rowIdx][idx + 1] = (<CellContainer>{pointMetadata.sequence[idx]["output"][rowNames[rowIdx]].toFixed(3)}</CellContainer>);
+                }
+              } else {
+                console.log("Point data : ", pointMetadata.sequence[idx]["output"][rowNames[rowIdx]]);
+                matrix[rowIdx][idx + 1] = (<CellContainer>{pointMetadata.sequence[idx]["output"][rowNames[rowIdx]].toString()}</CellContainer>);
+              }
             }
           }
           if (rowNames[rowIdx] in pointMetadata.sequence[idx]["input"])
-            matrix[rowIdx][idx + 1] = <CellContainer>{pointMetadata.sequence[idx]["input"][rowNames[rowIdx]]}</CellContainer>
+            matrix[rowIdx][idx + 1] = (<CellContainer>{pointMetadata.sequence[idx]["input"][rowNames[rowIdx]]}</CellContainer>);
         }
       }
 
@@ -137,7 +201,7 @@ function PointFlowScreen() {
                           {pointMetadata.sequence[col_index-1].input["magnifcation"]}-{column_name}
                         </strong>
                         (
-                          {pointMetadata.sequence[col_index-1]["total_time"]}sec
+                          {pointMetadata.sequence[col_index-1]["total_time"]/1000}sec
                         )
                       </RectangleColumn>
                     </React.Fragment>
@@ -154,13 +218,41 @@ function PointFlowScreen() {
           </Container>
         </Row>
       </Container>
+
+      <CustomModal show={showModal} onHide={handleClose} size="xl">
+        <Modal.Header closeButton>
+          <Modal.Title>Fine FM Distribution</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Container>{generateFineDistribution()}</Container>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </CustomModal>
     </>
   );
 }
 
 export default PointFlowScreen;
 
+const CustomModal = styled(Modal)`
+  .modal-dialog {
+    max-width: 90%;
+    width: 90%
+  }
+`;
+
 const CustomCol = styled(Col)`
+  canvas{
+    width: 150px !important;
+    height: 150px !important;
+  }
+`
+
+const SizeCol = styled(Col)`
   canvas{
     width: 150px !important;
     height: 150px !important;
@@ -226,4 +318,6 @@ const ReferenceContainer = styled(Row)`
 const CellContainer = styled(Col)`
   border: 0.05px solid #B6B6B4;
   border-collapse: collapse;
+  display: flex; /* Use Flexbox */
+  align-items: center; /* Center items vertically */
 `

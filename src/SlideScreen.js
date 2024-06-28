@@ -14,8 +14,6 @@ function SlideScreen()
      width: (slideInput["imaging_areas_coords"]["end_x"] - slideInput["imaging_areas_coords"]["start_x"])/2,
      height: (slideInput["imaging_areas_coords"]["end_y"] - slideInput["imaging_areas_coords"]["start_y"])/2
     });
-  console.log("Profile : ", slideInput["profile"]);
-  <h1>{slideInput["profile"]}</h1>
 
   useEffect(() => {
     const img = new Image();
@@ -31,9 +29,9 @@ function SlideScreen()
       for (let value of boxesList) {
         console.log(value);
         // Draw the box on the canvas
-        ctx.strokeStyle = value.color;
+        // ctx.strokeStyle = value.color;
         console.log(5);
-        // ctx.strokeStyle = '#006400';
+        ctx.strokeStyle = '#006400';
         ctx.lineWidth = 2;
         ctx.strokeRect(
           (value.start_x - slideInput["imaging_areas_coords"]["start_x"])/2, 

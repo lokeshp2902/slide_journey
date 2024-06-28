@@ -6,6 +6,7 @@ import Acquisition from './Acquisition';
 import { useSlideContext } from './SlideProvider';
 import PlanarityRejection from './PlanarityRejectionScreen';
 import RescanAcq from './RescanScreen';
+import ReferenceEstimationScreen from './ReferenceEstimation';
 
 function CenterScreen(){
   const {currentState, pointMetadata} = useSlideContext();
@@ -17,7 +18,6 @@ function CenterScreen(){
     {
       if("module" in pointMetadata && (pointMetadata["module"] === "best_z_level_estimation" ||  pointMetadata["module"] === "focus_sampling"))
       {
-        // console.log("11");
         console.log(pointMetadata["module"]);
         return <PointFlowScreen />;
       }
@@ -30,6 +30,10 @@ function CenterScreen(){
       {
         return <PlaneScreen />
       }
+      // else if("module" in pointMetadata && (pointMetadata["module"] === "reference_estimation"))
+      // {
+      //   return <ReferenceEstimationScreen />
+      // }
       else if("module" in pointMetadata && (pointMetadata["module"] === "Acquisition"))
       {
         return <Acquisition />

@@ -33,10 +33,10 @@ function PlaneScreen()
           <h5><strong>Plane X coefficient : </strong>{pointMetadata["plane_x_coff"]}</h5>
           <h5><strong>Plane Y coefficient : </strong>{pointMetadata["plane_y_coeff"]}</h5>
           <h5><strong>Plane constant : </strong>{pointMetadata["plane_const"]}</h5>
-          <h5><strong>Delta Z flag : </strong>{pointMetadata["delta_z_flag"]}</h5>
+          <h5><strong>Delta Z flag : </strong>{pointMetadata["delta_z_flag"].toString()}</h5>
           <h5><strong>Collinearity flag : </strong>{pointMetadata["collinearity_flag"]}</h5>
           <h5><strong>Spatial flag : </strong>{pointMetadata["spatial_distribution_flag"]}</h5>
-          <h5><strong>Confidence score : </strong>{pointMetadata["confidence_score"]}</h5>
+          <h5><strong>Confidence score : </strong>{pointMetadata["confidence_score_threshold"]}</h5>
           <h5><strong>Delta Z value : </strong>{pointMetadata["delta_z_value"]}</h5>
         </Col>
         {/* <Col>

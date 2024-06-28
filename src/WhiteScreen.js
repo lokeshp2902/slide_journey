@@ -70,6 +70,7 @@ function WhiteScreen()
     {getWhiteMatrix()}
     <h2>White Found :- {pointMetadata["white_found_status"].toString()}</h2>
     <Col>
+      <h3>Total time :- {pointMetadata["total_time"].toFixed(3)} sec</h3>
     </Col>
     <Col>
       <img width={250} height={150} src={pointMetadata["white_path"]}/>
